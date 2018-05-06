@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/mvlad/c_projects/11_Scop/src/openglhw.c
+OpenGL/gl3.h
+-
+stdbool.h
+-
+SDL2/SDL.h
+-
+
