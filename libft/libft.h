@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvlad <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: bruteflow <bruteflow@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 12:18:45 by mvlad             #+#    #+#             */
-/*   Updated: 2016/12/08 13:47:50 by mvlad            ###   ########.fr       */
+/*   Updated: 2019/03/28 12:18:55 by bruteflow        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-/*
-** lists
-*/
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));

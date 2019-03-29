@@ -1,4 +1,3 @@
-/Users/mvlad/c_projects/11_Scop/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/mvlad/c_projects/11_Scop/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/mvlad/c_projects/11_Scop/cmake-build-debug/CMakeFiles/ft.dir
-/Users/mvlad/c_projects/11_Scop/cmake-build-debug/CMakeFiles/scop.dir
+/Users/bruteflow/_projects/_unit/11_Scop/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/bruteflow/_projects/_unit/11_Scop/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/bruteflow/_projects/_unit/11_Scop/cmake-build-debug/CMakeFiles/scop.dir
