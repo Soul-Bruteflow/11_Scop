@@ -279,6 +279,7 @@ int				main(int argc, char *argv[])
 			return (0);
 		load_shaders(scop);
 		send_all_textures(scop);
+
 		main_colors(scop);
 		create_gl_buffers(scop);
 		main_matrix(scop);
@@ -314,9 +315,7 @@ void			send_texture_to_opengl(t_scop *scop, int n)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
-	glUniform1i(glGetUniformLocation(scop->shdr_prog, scop->t[n].gl_name), 0);
 	free(scop->t[n].img_data);
-	glActiveTexture(0);
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
 

@@ -56,7 +56,13 @@ unistd.h
 stdlib.h
 -
 
-/Users/bruteflow/_projects/_unit/11_Scop/src/key_functions_3.c
+/Users/bruteflow/_projects/_unit/11_Scop/src/main.c
+scop.h
+/Users/bruteflow/_projects/_unit/11_Scop/src/scop.h
+stdbool.h
+-
+
+/Users/bruteflow/_projects/_unit/11_Scop/src/main_loop.c
 scop.h
 /Users/bruteflow/_projects/_unit/11_Scop/src/scop.h
 

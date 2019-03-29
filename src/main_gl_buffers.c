@@ -30,6 +30,7 @@ void	create_gl_buffers(t_scop *scop)
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,scop->ebo);
 	glBindVertexArray(0);
+
 }
 
 void	create_vertices_buffer(t_scop *scop)
