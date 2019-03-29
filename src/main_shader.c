@@ -16,8 +16,6 @@ void		load_shaders(t_scop *scop)
 {
 	scop->vertex_shdr_src = parser_shader(VERT_PATH);
 	scop->fragment_shdr_src = parser_shader(FRAG_PATH);
-	//remove_trailing_comment(scop->vertex_shdr_src);
-	//remove_trailing_comment(scop->fragment_shdr_src);
 	build_shaders(scop);
 }
 
@@ -56,7 +54,7 @@ void		build_shaders(t_scop *scop)
 	glLinkProgram(scop->shdr_prog);
 	glGetProgramiv(scop->shdr_prog, GL_LINK_STATUS, &success);
 	if (!success)
-		print_error(scop->shdr_prog, &log);
+		print_error(scop->shdr_prog, log);
 	glDeleteShader(scop->vertex_shader);
 	glDeleteShader(scop->fragment_shader);
 }
@@ -69,18 +67,5 @@ void		compile_shader(unsigned int shader)
 	glCompileShader(shader);
 	glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
 	if (!success)
-		print_error(shader, &log);
-}
-
-void		remove_trailing_comment(char *shader_source)
-{
-	int		i;
-
-	i = 0;
-	while (shader_source[i])
-	{
-		if (shader_source[i] == '/' && shader_source[i + 1] == '/')
-			shader_source[i - 1] = '\0';
-		i++;
-	}
+		print_error(shader, log);
 }

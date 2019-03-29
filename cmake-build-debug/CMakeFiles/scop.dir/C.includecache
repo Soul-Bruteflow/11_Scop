@@ -56,13 +56,11 @@ unistd.h
 stdlib.h
 -
 
-/Users/bruteflow/_projects/_unit/11_Scop/src/main.c
+/Users/bruteflow/_projects/_unit/11_Scop/src/load_tga.c
 scop.h
 /Users/bruteflow/_projects/_unit/11_Scop/src/scop.h
-stdbool.h
--
 
-/Users/bruteflow/_projects/_unit/11_Scop/src/main_loop.c
+/Users/bruteflow/_projects/_unit/11_Scop/src/vector_math_1.c
 scop.h
 /Users/bruteflow/_projects/_unit/11_Scop/src/scop.h
 

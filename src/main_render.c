@@ -20,7 +20,7 @@ void	main_render(t_scop *scop)
 	//glBindVertexArray(scop->vao_pos);
 	//glBindVertexArray(scop->vao_col);
 	scop->view_id = glGetUniformLocation(scop->shdr_prog, "view");
-	glUniformMatrix4fv(scop->view_id, 1, GL_FALSE, scop->view.m);
+	glUniformMatrix4fv(scop->view_id, 1, GL_FALSE, scop->view.m[0]);
 	set_model_mats(scop);
 	transfer_matrices_to_gpu(scop);
 	transfer_key_mods_to_gpu(scop);
@@ -40,19 +40,19 @@ void	main_render(t_scop *scop)
 void	transfer_matrices_to_gpu(t_scop *scop)
 {
 	scop->scale_id = glGetUniformLocation(scop->shdr_prog, "scale");
-	glUniformMatrix4fv(scop->scale_id, 1, GL_FALSE, scop->scale.m);
+	glUniformMatrix4fv(scop->scale_id, 1, GL_FALSE, scop->scale.m[0]);
 	scop->trans_id = glGetUniformLocation(scop->shdr_prog, "translate");
-	glUniformMatrix4fv(scop->trans_id, 1, GL_FALSE, scop->translate.m);
+	glUniformMatrix4fv(scop->trans_id, 1, GL_FALSE, scop->translate.m[0]);
 	scop->rotate_x_id = glGetUniformLocation(scop->shdr_prog, "rotate_x");
-	glUniformMatrix4fv(scop->rotate_x_id, 1, GL_FALSE, scop->rotate_x.m);
+	glUniformMatrix4fv(scop->rotate_x_id, 1, GL_FALSE, scop->rotate_x.m[0]);
 	scop->rotate_y_id = glGetUniformLocation(scop->shdr_prog, "rotate_y");
-	glUniformMatrix4fv(scop->rotate_y_id, 1, GL_FALSE, scop->rotate_y.m);
+	glUniformMatrix4fv(scop->rotate_y_id, 1, GL_FALSE, scop->rotate_y.m[0]);
 	scop->rotate_z_id = glGetUniformLocation(scop->shdr_prog, "rotate_z");
-	glUniformMatrix4fv(scop->rotate_z_id, 1, GL_FALSE, scop->rotate_z.m);
+	glUniformMatrix4fv(scop->rotate_z_id, 1, GL_FALSE, scop->rotate_z.m[0]);
 	scop->trans_cent_id = glGetUniformLocation(scop->shdr_prog, "trans_cent");
-	glUniformMatrix4fv(scop->trans_cent_id, 1, GL_FALSE, scop->trans_cent.m);
+	glUniformMatrix4fv(scop->trans_cent_id, 1, GL_FALSE, scop->trans_cent.m[0]);
 	scop->trans_back_id = glGetUniformLocation(scop->shdr_prog, "trans_back");
-	glUniformMatrix4fv(scop->trans_back_id, 1, GL_FALSE, scop->trans_back.m);
+	glUniformMatrix4fv(scop->trans_back_id, 1, GL_FALSE, scop->trans_back.m[0]);
 }
 
 void	transfer_key_mods_to_gpu(t_scop *s)

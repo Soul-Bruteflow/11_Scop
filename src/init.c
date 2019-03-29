@@ -16,7 +16,7 @@ t_scop			*init_scop()
 {
 	t_scop		*tmp;
 
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 	tmp = malloc(sizeof(t_scop));
 	return (tmp);
 }

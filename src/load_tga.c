@@ -30,25 +30,15 @@ int				load_all_tga(t_scop *scop)
 void				generate_file_names(t_scop *scop)
 {
 	scop->t[0].filename = TGA_PATH_1;
-	scop->t[0].gl_name = TGA_GL_1;
 	scop->t[1].filename = TGA_PATH_2;
-	scop->t[1].gl_name = TGA_GL_2;
 	scop->t[2].filename = TGA_PATH_3;
-	scop->t[2].gl_name = TGA_GL_3;
 	scop->t[3].filename = TGA_PATH_4;
-	scop->t[3].gl_name = TGA_GL_4;
 	scop->t[4].filename = TGA_PATH_5;
-	scop->t[4].gl_name = TGA_GL_5;
 	scop->t[5].filename = TGA_PATH_6;
-	scop->t[5].gl_name = TGA_GL_6;
 	scop->t[6].filename = TGA_PATH_7;
-	scop->t[6].gl_name = TGA_GL_7;
 	scop->t[7].filename = TGA_PATH_8;
-	scop->t[7].gl_name = TGA_GL_8;
 	scop->t[8].filename = TGA_PATH_9;
-	scop->t[8].gl_name = TGA_GL_9;
 	scop->t[9].filename = TGA_PATH_10;
-	scop->t[9].gl_name = TGA_GL_10;
 }
 
 int					load_tga(t_scop *s, int n)

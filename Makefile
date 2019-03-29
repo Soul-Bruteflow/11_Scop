@@ -58,13 +58,13 @@ LIB = $(LIB_LIB) $(LIBGLEW)
 HEADERS	= $(INC_DIR)
 
 CC		= gcc
-CFLAGS	= 
+CFLAGS	= -Wall -Wextra -Werror
 SDL		= -F $(FRM_DIR) -framework SDL2 -framework OpenGL
 INC_OPT = -I $(LIB_INC) -I $(INC_DIR) -I $(SDL_INC) -I$(LIBGLEWINC)
 OUT_OPT = -o
 OBJ_OPT = $< -o $@
-LIB_OPT	= -c -g
-OPTIMA	= 
+LIB_OPT	= -c
+OPTIMA	= -O3
 
 RMF 	= rm -f
 RMD		= rm -rf

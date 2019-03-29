@@ -75,27 +75,17 @@ void	togle_color_mod_1(t_scop *scop)
 
 void	togle_color_refresh(t_scop *scop)
 {
+	size_t s;
+
 	if (scop->event.key.keysym.sym == SDLK_r)
 	{
 		generate_random_colors(scop);
 		create_colors_buffer(scop);
-
-		size_t s;
-
 		s = sizeof(float) * (scop->vert_num + (scop->vert_num / 3));
 		glBindBuffer(GL_ARRAY_BUFFER, scop->vbo_col);
 		glBufferData(GL_ARRAY_BUFFER, s, scop->colors, GL_STATIC_DRAW);
-
 		glBindVertexArray(scop->vao);
-		///glBindBuffer(GL_ARRAY_BUFFER,scop->vbo_col);//Colour Buffer
-
-		//glEnableVertexAttribArray(1);
-
 		glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 0, 0);
-
-		//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,scop->ebo);
-		//glBindVertexArray(0);
-
 		if (scop->cur_tex_num >= TEX_COUNT)
 			scop->cur_tex_num = 0;
 		else

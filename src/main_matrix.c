@@ -19,8 +19,8 @@ void	main_matrix(t_scop *scop)
 	glUseProgram(scop->shdr_prog);
 	scop->view_id = glGetUniformLocation(scop->shdr_prog, "view");
 	scop->proj_id = glGetUniformLocation(scop->shdr_prog, "proj");
-	glUniformMatrix4fv(scop->view_id, 1, GL_FALSE, scop->view.m);
-	glUniformMatrix4fv(scop->proj_id, 1, GL_FALSE, scop->proj.m);
+	glUniformMatrix4fv(scop->view_id, 1, GL_FALSE, scop->view.m[0]);
+	glUniformMatrix4fv(scop->proj_id, 1, GL_FALSE, scop->proj.m[0]);
 	glUseProgram(0);
 }
 

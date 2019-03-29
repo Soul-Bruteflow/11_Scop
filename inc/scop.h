@@ -65,9 +65,6 @@
 # define COMPAT_FLAG	0x0002
 typedef	unsigned char	Uchar;
 
-const char * GetGLErrorStr(GLenum err);
-void CheckGLError();
-
 /*
 ** Math structs
 */
@@ -93,7 +90,6 @@ typedef struct			s_tex
 	long				img_sz;
 	unsigned int		i;
 	char				*filename;
-	char				*gl_name;
 	unsigned int		gl_id;
 }						t_tex;
 
@@ -121,7 +117,6 @@ typedef struct			s_scop
 	unsigned int		vbo_pos;
 	unsigned int		vbo_col;
 	unsigned int		ebo;
-	unsigned int		buffers_idx[BUFF_COUNT - 1];
 	t_vec3				up;
 	t_vec3				eye;
 	t_vec3				center;
@@ -134,9 +129,6 @@ typedef struct			s_scop
 	float				far;
 	float				asp;
 	float				scale_factor;
-	t_mat4				model;
-	int					model_id;
-	int					texture_id;
 	t_vec3				move_fac;
 	t_mat4				scale;
 	t_mat4				translate;
@@ -145,8 +137,6 @@ typedef struct			s_scop
 	t_mat4				rotate_x;
 	t_mat4				rotate_y;
 	t_mat4				rotate_z;
-	t_mat4				rotate_a;
-	int					rotate_a_id;
 	int					rotate_x_id;
 	int					rotate_y_id;
 	int					rotate_z_id;
@@ -167,7 +157,6 @@ typedef struct			s_scop
 	double				old_time;
 	double				delta;
 	int					copy_auto;
-	int					copy_auto2;
 	int					is_draw_lines;
 	short				color_mode_1;
 	short				color_mode_2;
@@ -247,7 +236,6 @@ const char				*parser_shader(const char *file_path);
 void					build_shaders(t_scop *scop);
 void					print_error(unsigned int shader, char *log);
 void					compile_shader(unsigned int shader);
-void					remove_trailing_comment(char *shader_source);
 
 /*
 ** Render
@@ -264,6 +252,7 @@ void					create_gl_buffers(t_scop *scop);
 void					create_index_buffer(t_scop *scop);
 void					create_vertices_buffer(t_scop *scop);
 void					create_colors_buffer(t_scop *scop);
+void					pack_buffs_in_vao(t_scop * scop);
 
 /*
 ** Vector math
@@ -272,7 +261,6 @@ t_vec3					vec3_set(float x, float y, float z);
 float					vec3_magnitude(t_vec3 v);
 t_vec3					vec3_normalize(t_vec3 v);
 t_vec3					vec3_sub(t_vec3 v1, t_vec3 v2);
-t_vec3					vec3_add(t_vec3 v1, t_vec3 v2);
 t_vec3					vec3_cross(t_vec3 v1, t_vec3 v2);
 float					vec3_dot(t_vec3 v1, t_vec3 v2);
 

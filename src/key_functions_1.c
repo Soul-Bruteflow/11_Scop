@@ -84,5 +84,5 @@ float	translate_move(float base_value, int flag, double delta)
 		return (0.0f);
 	if (base_value <= -100.0f && flag == -1)
 		return (0.0f);
-	return (15.0f * delta);
+	return (15.0f * (float)delta);
 }
