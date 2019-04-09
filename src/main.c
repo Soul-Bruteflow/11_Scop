@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvlad <thelarion@gmail.com>                +#+  +:+       +#+        */
+/*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 13:50:44 by mvlad             #+#    #+#             */
-/*   Updated: 2019/03/27 13:50:44 by mvlad            ###   ########.fr       */
+/*   Updated: 2019/04/09 13:31:05 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,9 @@ int				main(int argc, char *argv[])
 			return (0);
 		load_shaders(scop);
 		send_all_textures(scop);
-
 		main_colors(scop);
 		create_gl_buffers(scop);
 		main_matrix(scop);
-		glClearColor(0.0, 0.0, 0.0, 1.0);
-		glClear(GL_COLOR_BUFFER_BIT);
-		SDL_GL_SwapWindow(scop->main_window);
 		main_loop(scop);
 		cleanup_sdl(scop);
 	}
@@ -44,7 +40,8 @@ int				main(int argc, char *argv[])
 }
 
 void			send_all_textures(t_scop *scop)
-{	int			i;
+{
+	int			i;
 
 	i = 0;
 	while (i < TEX_COUNT)
@@ -60,8 +57,7 @@ void			send_texture_to_opengl(t_scop *scop, int n)
 	glActiveTexture(GL_TEXTURE0 + n);
 	glBindTexture(GL_TEXTURE_2D, scop->t[n].gl_id);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, scop->t[n].tga_width,
-				scop->t[n].tga_height, 0, GL_RGB, GL_UNSIGNED_BYTE,
-				scop->t[n].img_data);
+	scop->t[n].tga_height, 0, GL_RGB, GL_UNSIGNED_BYTE, scop->t[n].img_data);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);

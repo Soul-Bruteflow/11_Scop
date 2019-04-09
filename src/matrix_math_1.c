@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   matrix_math_1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvlad <thelarion@gmail.com>                +#+  +:+       +#+        */
+/*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 13:50:46 by mvlad             #+#    #+#             */
-/*   Updated: 2019/03/27 13:50:46 by mvlad            ###   ########.fr       */
+/*   Updated: 2019/04/09 13:31:33 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ t_mat4		mat_init(float val)
 	return (result);
 }
 
-t_mat4		mat_set_identity()
+t_mat4		mat_set_identity(void)
 {
 	t_mat4	result;
 

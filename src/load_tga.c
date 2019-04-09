@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_tga.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bruteflow <bruteflow@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 13:50:16 by mvlad             #+#    #+#             */
-/*   Updated: 2019/03/28 14:45:42 by bruteflow        ###   ########.fr       */
+/*   Updated: 2019/04/09 13:24:29 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int				load_all_tga(t_scop *scop)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	generate_file_names(scop);
@@ -27,7 +27,7 @@ int				load_all_tga(t_scop *scop)
 	return (1);
 }
 
-void				generate_file_names(t_scop *scop)
+void			generate_file_names(t_scop *scop)
 {
 	scop->t[0].filename = TGA_PATH_1;
 	scop->t[1].filename = TGA_PATH_2;
@@ -41,9 +41,9 @@ void				generate_file_names(t_scop *scop)
 	scop->t[9].filename = TGA_PATH_10;
 }
 
-int					load_tga(t_scop *s, int n)
+int				load_tga(t_scop *s, int n)
 {
-	FILE			*file_ptr;
+	FILE		*file_ptr;
 
 	file_ptr = fopen(s->t[n].filename, "rb");
 	if (file_ptr == NULL)
@@ -69,7 +69,7 @@ int					load_tga(t_scop *s, int n)
 	return (1);
 }
 
-void				calculate_tga_data(t_scop *s, int n, FILE *file_ptr)
+void			calculate_tga_data(t_scop *s, int n, FILE *file_ptr)
 {
 	fread(&s->sint_bad, sizeof(short int), 1, file_ptr);
 	fread(&s->sint_bad, sizeof(short int), 1, file_ptr);
@@ -82,6 +82,6 @@ void				calculate_tga_data(t_scop *s, int n, FILE *file_ptr)
 	fread(&s->uchar_bad, sizeof(unsigned char), 1, file_ptr);
 	s->color_mode = s->t[n].tga_bit_count / 8;
 	s->t[n].img_sz = s->t[n].tga_width * s->t[n].tga_height * s->color_mode;
-	s->t[n].img_data = (Uchar*)malloc(sizeof(Uchar) * s->t[n].img_sz);
+	s->t[n].img_data = (t_uchar*)malloc(sizeof(t_uchar) * s->t[n].img_sz);
 	fread(s->t[n].img_data, sizeof(unsigned char), s->t[n].img_sz, file_ptr);
 }

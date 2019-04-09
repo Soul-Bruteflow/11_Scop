@@ -6,7 +6,7 @@
 /*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 13:50:56 by mvlad             #+#    #+#             */
-/*   Updated: 2019/04/09 12:25:14 by mvlad            ###   ########.fr       */
+/*   Updated: 2019/04/09 13:24:23 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,6 +185,7 @@ typedef struct			s_scop
 	t_vec3				bgrd_col;
 	unsigned char		t_u_bad;
 	short int			sint_bad;
+	unsigned char		uchar_bad;
 	int					color_mode;
 	unsigned char		color_swap;
 	int					fd;

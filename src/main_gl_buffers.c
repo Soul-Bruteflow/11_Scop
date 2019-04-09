@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_gl_buffers.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvlad <thelarion@gmail.com>                +#+  +:+       +#+        */
+/*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 13:50:23 by mvlad             #+#    #+#             */
-/*   Updated: 2019/03/27 13:50:23 by mvlad            ###   ########.fr       */
+/*   Updated: 2019/04/09 13:26:13 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,20 @@ void	create_index_buffer(t_scop *scop)
 	glGenBuffers(1, &scop->ebo);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, scop->ebo);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, s, scop->indic, GL_STATIC_DRAW);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
-	glBindBuffer(GL_ARRAY_BUFFER,0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
-void	pack_buffs_in_vao(t_scop * scop)
+void	pack_buffs_in_vao(t_scop *scop)
 {
 	glGenVertexArrays(1, &scop->vao);
 	glBindVertexArray(scop->vao);
-	glBindBuffer(GL_ARRAY_BUFFER,scop->vbo_pos);
+	glBindBuffer(GL_ARRAY_BUFFER, scop->vbo_pos);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-	glBindBuffer(GL_ARRAY_BUFFER,scop->vbo_col);
+	glBindBuffer(GL_ARRAY_BUFFER, scop->vbo_col);
 	glEnableVertexAttribArray(1);
 	glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 0, 0);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,scop->ebo);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, scop->ebo);
 	glBindVertexArray(0);
 }

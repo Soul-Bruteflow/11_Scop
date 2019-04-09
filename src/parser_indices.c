@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_indices.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bruteflow <bruteflow@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 15:51:50 by mvlad             #+#    #+#             */
-/*   Updated: 2019/03/28 14:47:40 by bruteflow        ###   ########.fr       */
+/*   Updated: 2019/04/09 13:33:33 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 unsigned int		indices_write(t_scop *scop, unsigned int cap2, char *line)
 {
-
 	char			**splited_values;
 	int				element_count;
 
@@ -33,7 +32,7 @@ unsigned int		indices_write(t_scop *scop, unsigned int cap2, char *line)
 	return (cap2);
 }
 
-void				indices_write_three(t_scop *scop, char	**splited_values)
+void				indices_write_three(t_scop *scop, char **splited_values)
 {
 	scop->indic[scop->indic_num + 0] = (ft_atoi(splited_values[0]) - 1);
 	scop->indic[scop->indic_num + 1] = (ft_atoi(splited_values[1]) - 1);
@@ -41,7 +40,7 @@ void				indices_write_three(t_scop *scop, char	**splited_values)
 	scop->indic_num += 3;
 }
 
-void				indices_write_four(t_scop *scop, char	**splited_values)
+void				indices_write_four(t_scop *scop, char **splited_values)
 {
 	scop->indic[scop->indic_num + 0] = (ft_atoi(splited_values[0]) - 1);
 	scop->indic[scop->indic_num + 1] = (ft_atoi(splited_values[1]) - 1);

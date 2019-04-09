@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_parser.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bruteflow <bruteflow@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 13:50:36 by mvlad             #+#    #+#             */
-/*   Updated: 2019/03/28 14:47:06 by bruteflow        ###   ########.fr       */
+/*   Updated: 2019/04/09 13:27:23 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int					is_obj(t_scop *scop)
 	return (0);
 }
 
-void		find_min_max(t_scop *scop)
+void				find_min_max(t_scop *scop)
 {
 	scop->i = 0;
 	while (scop->i < scop->vert_num)
