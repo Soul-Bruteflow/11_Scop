@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scop.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bruteflow <bruteflow@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 13:50:56 by mvlad             #+#    #+#             */
-/*   Updated: 2019/03/28 14:48:26 by bruteflow        ###   ########.fr       */
+/*   Updated: 2019/04/09 12:25:14 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@
 /*
 ** External libs
 */
-# include				<math.h>
-# include				<time.h>
-# include				<stdio.h>
-# include				<stdlib.h>
-# include				<fcntl.h>
-# include				<GL/glew.h>
-# include				<SDL.h>
-# include				<SDL_opengl.h>
+# include <math.h>
+# include <time.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <GL/glew.h>
+# include <SDL.h>
+# include <SDL_opengl.h>
 
 /*
 ** Custom libs
 */
-# include				"libft.h"
-# include				"get_next_line.h"
+# include "libft.h"
+# include "get_next_line.h"
 
 /*
 ** Defines
@@ -63,7 +63,9 @@
 # define TGA_GL_10		"tex_10"
 # define PROFILE_CORE	0x0001
 # define COMPAT_FLAG	0x0002
-typedef	unsigned char	Uchar;
+
+typedef	unsigned char	t_uchar;
+typedef	unsigned int	t_uint;
 
 /*
 ** Math structs
@@ -181,7 +183,7 @@ typedef struct			s_scop
 	t_tex				t[TEX_COUNT];
 	int					cur_tex_num;
 	t_vec3				bgrd_col;
-	unsigned char		uchar_bad;
+	unsigned char		t_u_bad;
 	short int			sint_bad;
 	int					color_mode;
 	unsigned char		color_swap;
@@ -216,8 +218,8 @@ void					cleanup_sdl(t_scop *scop);
 int						obj_pars_main(t_scop *scop);
 int						is_obj(t_scop *scop);
 int						read_wtire_v_f(t_scop *scop);
-unsigned int			vertices_write(t_scop *scop, unsigned int cap, char *line);
-unsigned int			indices_write(t_scop *scop, unsigned int cap2, char *line);
+t_uint					vertices_write(t_scop *scop, t_uint cap, char *line);
+t_uint					indices_write(t_scop *scop, t_uint cap2, char *line);
 void					indices_write_three(t_scop *scop, char **s_values);
 void					indices_write_four(t_scop *scop, char **s_values);
 void					find_min_max(t_scop *scop);
@@ -252,7 +254,7 @@ void					create_gl_buffers(t_scop *scop);
 void					create_index_buffer(t_scop *scop);
 void					create_vertices_buffer(t_scop *scop);
 void					create_colors_buffer(t_scop *scop);
-void					pack_buffs_in_vao(t_scop * scop);
+void					pack_buffs_in_vao(t_scop *scop);
 
 /*
 ** Vector math
@@ -286,7 +288,7 @@ t_mat4					mat_rotate(float angle, t_vec3 axis);
 void					init_key(t_scop *scop);
 void					scale_mesh(t_scop *scop);
 void					translate_mesh(t_scop *scop);
-float					translate_move(float base_value, int flag, double delta);
+float					translate_move(float b, int flag, double d);
 t_mat4					mat_set_rotate(float c, float s, t_vec3 axis);
 void					rotate_x(t_scop *scop);
 void					rotate_y(t_scop *scop);
