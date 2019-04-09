@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvlad <thelarion@gmail.com>                +#+  +:+       +#+        */
+/*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 13:49:53 by mvlad             #+#    #+#             */
-/*   Updated: 2019/03/27 13:49:53 by mvlad            ###   ########.fr       */
+/*   Updated: 2019/04/09 12:57:17 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "scop.h"
 
-t_scop			*init_scop()
+t_scop			*init_scop(void)
 {
 	t_scop		*tmp;
 
@@ -41,10 +41,10 @@ int				init_sdl_gl(t_scop *scop)
 	return (0);
 }
 
-void			init_open_gl_attributes()
+void			init_open_gl_attributes(void)
 {
-	SDL_GL_SetAttribute (SDL_GL_CONTEXT_FLAGS, COMPAT_FLAG);
-	SDL_GL_SetAttribute (SDL_GL_CONTEXT_PROFILE_MASK, PROFILE_CORE);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, COMPAT_FLAG);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, PROFILE_CORE);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
 	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
